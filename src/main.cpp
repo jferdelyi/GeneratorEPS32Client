@@ -6,21 +6,21 @@
 #define BTN_BOOT 0
 
 // Secrets
-#define SECRET_SSID "iPhone de Jean-François"
-#define SECRET_PASS "jaimelepate"
+#define SECRET_SSID "xxxx"
+#define SECRET_PASS "xxxx"
 
 // The display
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32);
 
 // Server data client
-String IP = String("http://zeta.local");
+String IP = String("x.x.x.x");
 String PORT = String("4242");
 String VERSION = String("v1");
 String GENERATE = String("generate");
 
 // Connection data
 WiFiClient wifi;
-HttpClient client = HttpClient(wifi, "172.20.10.2", 4242);
+HttpClient client = HttpClient(wifi, IP, 4242);
 bool requested = false;
 
 void initScreen() {
