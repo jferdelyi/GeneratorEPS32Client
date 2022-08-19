@@ -1,26 +1,23 @@
 #include <Adafruit_SSD1306.h>
 #include <ArduinoHttpClient.h>
 #include <WiFi.h>
+#include "credential.h"
 
 // The BOOT button
 #define BTN_BOOT 0
-
-// Secrets
-#define SECRET_SSID "iPhone de Jean-François"
-#define SECRET_PASS "jaimelepate"
 
 // The display
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32);
 
 // Server data client
-String IP = String("http://zeta.local");
-String PORT = String("4242");
+String IP = String("172.20.10.2");
+int PORT = 4242;
 String VERSION = String("v1");
 String GENERATE = String("generate");
 
 // Connection data
 WiFiClient wifi;
-HttpClient client = HttpClient(wifi, "172.20.10.2", 4242);
+HttpClient client = HttpClient(wifi, IP, PORT);
 bool requested = false;
 
 void initScreen() {
@@ -85,6 +82,5 @@ void loop() {
 
 	// Wait a bit
 	delay(10);
-  	yield();
   	display.display();
 }
