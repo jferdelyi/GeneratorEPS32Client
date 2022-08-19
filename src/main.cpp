@@ -10,8 +10,8 @@
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32);
 
 // Server data client
-String IP = String("172.20.10.2");
-int PORT = 4242;
+String IP = String("x.x.x.x");
+String PORT = String("4242");
 String VERSION = String("v1");
 String GENERATE = String("generate");
 
